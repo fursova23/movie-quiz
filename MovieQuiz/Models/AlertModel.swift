@@ -1,8 +1,8 @@
 struct AlertModel {
     
-    var title: String
-    var message: String
-    var buttonText: String
-    var completion: () -> Void
+    let title: String
+    let message: String
+    let buttonText: String
+    let completion: () -> Void
     
 }

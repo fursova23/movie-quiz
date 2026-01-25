@@ -37,15 +37,15 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     
     // MARK: - QuestionFactoryDelegate
     
-    func didReceiveNextQustion(question: QuizQuestion?) {
+    func didReceiveNextQuestion(question: QuizQuestion?) {
         guard let question else {
             return
         }
         currentQuestion = question
         let viewModel = convert(model: question)
         
-        DispatchQueue.main.async{ [weak self] in
-            self?.show(viewModel)
+        DispatchQueue.main.async{
+            self.show(viewModel)
         }
     }
     
@@ -70,7 +70,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     }
     
     private func checkCorrectAnswer(_ currentQuestion: QuizQuestion, _ userAnswer: Bool) -> Bool {
-        return currentQuestion.correctAnswer == userAnswer
+        currentQuestion.correctAnswer == userAnswer
     }
     
     private func showNextQuestionOrResults() {
