@@ -2,22 +2,28 @@ import Foundation
 import XCTest
 @testable import MovieQuiz
 
-class ArrayTests: XCTestCase {
+final class ArrayTests: XCTestCase {
     
-    func getValueInRange() throws {
+    func testGValueInRange() throws {
+        // Given
         let array = [1, 2, 3, 4, 5]
         
+        // When
         let value = array[safe: 2]
         
+        // Then
         XCTAssertNotNil(value)
-        XCTAssertEqual(value, 2)
+        XCTAssertEqual(value, 3)
     }
     
     func testGetValueOutOfRange() throws {
+        // Given
         let array = [1, 2, 3, 4, 5]
         
+        // When
         let value = array[safe: 20]
         
+        // Then
         XCTAssertNil(value)
     }
     
