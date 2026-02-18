@@ -14,6 +14,7 @@ final class AlertPresenter {
         }
         
         alert.addAction(action)
+        
         vc.present(alert, animated: true)
     }
     
